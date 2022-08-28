@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  uploader:
+    build: .
+    container_name: uploader
+    environment:
+      - OBJECT_STORAGE_URL=$OBJECT_STORAGE_URL
+      - AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
+      - REGION=$REGION
+      - AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY
+    ports:
+      - "3005:3005"
+    restart: unless-stopped
+
