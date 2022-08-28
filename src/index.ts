@@ -28,6 +28,6 @@ const uploadHandler = async (req: Request, res: Response) => {
 
 }
 
-app.put('/:bucket/:key', uploadHandler)
+app.get('/:bucket/:key', uploadHandler)
 
 app.listen(3005)
